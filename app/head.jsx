@@ -1,7 +1,6 @@
 export default function Head() {
 	return (
 		<>
-			<title>Bangla TV - Bangla TV Live | Bangla News Today </title>
 			<meta
 				content="width=device-width, initial-scale=1"
 				name="viewport"

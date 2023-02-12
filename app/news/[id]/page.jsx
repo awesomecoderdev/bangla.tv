@@ -24,7 +24,7 @@ export async function generateMetadata({ params, searchParams }) {
 	// console.log("searchParams", searchParams);
 	if (params?.id) {
 		const { post } = await getPost(params.id);
-		return { title: post?.title.rendered ?? "Unknown" };
+		return { title: post.title?.rendered ?? "Unknown" };
 	} else {
 		return { title: "Unknown" };
 	}
