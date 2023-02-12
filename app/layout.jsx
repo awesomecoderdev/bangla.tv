@@ -1,4 +1,4 @@
-import Cookies from "@/components/Cookies";
+// import Cookies from "@/components/Cookies";
 import Image from "next/image";
 import Link from "next/link";
 import { TvIcon } from "@heroicons/react/24/outline";
@@ -110,7 +110,7 @@ export default function RootLayout({ children }) {
 
 				{children}
 
-				<Cookies />
+				{/* <Cookies /> */}
 
 				<footer className="bg-white dark:bg-gray-900">
 					<div className="container px-6 py-12 mx-auto">

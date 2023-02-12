@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-// export const revalidate = 60; // revalidate this page every 60 seconds
+export const revalidate = 60; // revalidate this page every 60 seconds
 
 export const metadata = {
 	title: "News",
@@ -13,16 +13,16 @@ async function getPosts() {
 		`https://banglatv.tv/wp-json/wp/v2/posts/?_embed&per_page=12`
 	);
 
-	// const headers = await res.headers;
-	// const pages = headers.get("x-wp-totalpages") ?? 100;
-	// const page = Math.round(Math.random() * (pages - 1) + 1);
+	const headers = await res.headers;
+	const pages = headers.get("x-wp-totalpages") ?? 100;
+	const page = Math.round(Math.random() * (pages - 1) + 1);
 
-	// const response = await fetch(
-	// 	`https://banglatv.tv/wp-json/wp/v2/posts/?_embed&per_page=12&page=${page}`
-	// );
+	const response = await fetch(
+		`https://banglatv.tv/wp-json/wp/v2/posts/?_embed&per_page=12&page=${page}`
+	);
 
-	// const posts = await response.json();
-	const posts = await res.json();
+	const posts = await response.json();
+	// const posts = await res.json();
 	return { posts };
 }
 
@@ -52,9 +52,9 @@ export default async function News() {
 											priority="true"
 											sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw,33vw"
 										/>
-										<div className="flex items-center justify-center w-full h-full animate-pulse ">
+										<div class="flex items-center justify-center w-full h-full animate-pulse ">
 											<svg
-												className="w-12 h-12 text-gray-200"
+												class="w-12 h-12 text-gray-200"
 												xmlns="http://www.w3.org/2000/svg"
 												aria-hidden="true"
 												fill="currentColor"

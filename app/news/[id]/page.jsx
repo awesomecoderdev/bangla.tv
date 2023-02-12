@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+export const revalidate = false;
 
 async function getPost(id) {
 	const res = await fetch(
@@ -8,22 +9,27 @@ async function getPost(id) {
 	);
 	const post = await res.json();
 
-	const cat_id = post._embedded["wp:term"][0][0].id ?? 1;
-	const categories = await fetch(
-		`https://banglatv.tv/wp-json/wp/v2/posts/?_embed&categories=${cat_id}&per_page=6`
-	);
-	const cats = await categories.json();
+	// const cat_id = post._embedded["wp:term"][0][0].id ?? 1;
+	// const categories = await fetch(
+	// 	`https://banglatv.tv/wp-json/wp/v2/posts/?_embed&categories=${cat_id}&per_page=6`
+	// );
+	// const cats = await categories.json();
+	const cats = [];
 
 	return { post, cats };
 }
 
-// export async function generateMetadata({ params, searchParams }) {
-// 	// console.log("params", params);
-// 	// console.log("searchParams", searchParams);
-// 	const { post } = await getPost(params.id);
-// 	return { title: post.title.rendered };
-// 	// return { title: "Hello world" };
-// }
+export async function generateMetadata({ params, searchParams }) {
+	// console.log("params", params);
+	// console.log("searchParams", searchParams);
+	if (params?.id) {
+		const { post } = await getPost(params.id);
+		return { title: post?.title.rendered ?? "Unknown" };
+	} else {
+		return { title: "Unknown" };
+	}
+	// return { title: "Hello world" };
+}
 
 export default async function Page({ params }) {
 	const { post, cats } = await getPost(params.id);
@@ -38,7 +44,7 @@ export default async function Page({ params }) {
 								<Image
 									src={post.jetpack_featured_media_url}
 									fill={true}
-									alt={post.title.rendered}
+									alt={post.title?.rendered}
 									className="z-10"
 								/>
 								<div className="flex items-center justify-center w-full h-full animate-pulse">
@@ -60,7 +66,7 @@ export default async function Page({ params }) {
 								</p> */}
 
 								<h1 className="max-w-lg mt-4 text-2xl font-semibold leading-tight text-gray-800 dark:text-white">
-									{post.title.rendered}
+									{post.title?.rendered}
 								</h1>
 
 								<div className="flex items-center mt-6">
@@ -71,8 +77,9 @@ export default async function Page({ params }) {
 											}
 											fill={true}
 											alt={
-												post._embedded.author[0].name ??
-												post.title.rendered
+												post._embedded?.author[0]
+													?.name ??
+												post.title?.rendered
 											}
 											className="z-10"
 										/>
@@ -91,7 +98,7 @@ export default async function Page({ params }) {
 
 									<div className="mx-4">
 										<h1 className="text-sm text-gray-700 dark:text-gray-200">
-											{post._embedded.author[0].name}
+											{post._embedded?.author[0]?.name}
 										</h1>
 										<p className="text-sm text-gray-500 dark:text-gray-400">
 											Reporter
@@ -102,7 +109,9 @@ export default async function Page({ params }) {
 									className="relative py-6"
 									id="content"
 									dangerouslySetInnerHTML={{
-										__html: post.content.rendered,
+										__html:
+											post.content?.rendered ??
+											"<span>Hello no data</span>",
 									}}
 								></div>
 							</div>
@@ -125,7 +134,7 @@ export default async function Page({ params }) {
 														][0].source_url
 													}
 													fill={true}
-													alt={cat.title.rendered}
+													alt={cat.title?.rendered}
 													className="z-10"
 												/>
 												<div className="flex items-center justify-center w-full h-full animate-pulse">
@@ -141,7 +150,7 @@ export default async function Page({ params }) {
 												</div>
 											</div>
 											<h2 className="mt-3 text-sm font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-lg truncate">
-												{cat.title.rendered}
+												{cat.title?.rendered}
 											</h2>
 										</Link>
 									) : (
