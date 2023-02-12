@@ -41,9 +41,9 @@ export default async function Page({ params }) {
 									alt={post.title.rendered}
 									className="z-10"
 								/>
-								<div class="flex items-center justify-center w-full h-full animate-pulse">
+								<div className="flex items-center justify-center w-full h-full animate-pulse">
 									<svg
-										class="w-16 h-16 text-gray-200"
+										className="w-16 h-16 text-gray-200"
 										xmlns="http://www.w3.org/2000/svg"
 										aria-hidden="true"
 										fill="currentColor"
@@ -76,9 +76,9 @@ export default async function Page({ params }) {
 											}
 											className="z-10"
 										/>
-										<div class="flex items-center justify-center w-full h-full animate-pulse">
+										<div className="flex items-center justify-center w-full h-full animate-pulse">
 											<svg
-												class="w-4 h-4 text-gray-200"
+												className="w-4 h-4 text-gray-200"
 												xmlns="http://www.w3.org/2000/svg"
 												aria-hidden="true"
 												fill="currentColor"
@@ -128,9 +128,9 @@ export default async function Page({ params }) {
 													alt={cat.title.rendered}
 													className="z-10"
 												/>
-												<div class="flex items-center justify-center w-full h-full animate-pulse">
+												<div className="flex items-center justify-center w-full h-full animate-pulse">
 													<svg
-														class="w-12 h-12 text-gray-200"
+														className="w-12 h-12 text-gray-200"
 														xmlns="http://www.w3.org/2000/svg"
 														aria-hidden="true"
 														fill="currentColor"

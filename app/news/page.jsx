@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export const revalidate = 60; // revalidate this page every 60 seconds
+// export const revalidate = 60; // revalidate this page every 60 seconds
 
 export const metadata = {
 	title: "News",
@@ -52,9 +52,9 @@ export default async function News() {
 											priority="true"
 											sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw,33vw"
 										/>
-										<div class="flex items-center justify-center w-full h-full animate-pulse ">
+										<div className="flex items-center justify-center w-full h-full animate-pulse ">
 											<svg
-												class="w-12 h-12 text-gray-200"
+												className="w-12 h-12 text-gray-200"
 												xmlns="http://www.w3.org/2000/svg"
 												aria-hidden="true"
 												fill="currentColor"

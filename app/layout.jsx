@@ -97,9 +97,9 @@ export default function RootLayout({ children }) {
 											Watch Live
 										</p>
 										{/* <TvIcon className="w-4 h-4 mx-1 stroke-gray-600 dark:stroke-white" /> */}
-										<span class="relative flex h-3 w-3 ml-2">
-											<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-											<span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+										<span className="relative flex h-3 w-3 ml-2">
+											<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+											<span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
 										</span>
 									</div>
 								</Link>

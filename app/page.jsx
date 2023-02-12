@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const revalidate = 60; // revalidate this page every 60 seconds
+// export const revalidate = 60; // revalidate this page every 60 seconds
 
 async function getPosts() {
 	const res = await fetch(
@@ -52,9 +52,9 @@ export default async function Home() {
 											priority="true"
 											sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw,33vw"
 										/>
-										<div class="flex items-center justify-center w-full h-full animate-pulse">
+										<div className="flex items-center justify-center w-full h-full animate-pulse">
 											<svg
-												class="w-12 h-12 text-gray-200"
+												className="w-12 h-12 text-gray-200"
 												xmlns="http://www.w3.org/2000/svg"
 												aria-hidden="true"
 												fill="currentColor"
@@ -102,29 +102,29 @@ export default async function Home() {
 				</div>
 			</section>
 
-			<section class="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
-				<div class="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
-					<div class="flex justify-center order-2 mt-6 lg:mt-0 lg:space-y-3 lg:flex-col">
-						<button class="w-3 h-3 mx-2 bg-blue-500 rounded-full lg:mx-0 focus:outline-none"></button>
-						<button class="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
-						<button class="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
-						<button class="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
+			<section className="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
+				<div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
+					<div className="flex justify-center order-2 mt-6 lg:mt-0 lg:space-y-3 lg:flex-col">
+						<button className="w-3 h-3 mx-2 bg-blue-500 rounded-full lg:mx-0 focus:outline-none"></button>
+						<button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
+						<button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
+						<button className="w-3 h-3 mx-2 bg-gray-300 rounded-full lg:mx-0 focus:outline-none hover:bg-blue-500"></button>
 					</div>
 
-					<div class="max-w-lg lg:mx-12 lg:order-2">
-						<h1 class="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
+					<div className="max-w-lg lg:mx-12 lg:order-2">
+						<h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">
 							The best TV Watch now
 						</h1>
-						<p class="mt-4 text-gray-600 dark:text-gray-300">
+						<p className="mt-4 text-gray-600 dark:text-gray-300">
 							Lorem ipsum, dolor sit amet consectetur adipisicing
 							elit. Aut quia asperiores alias vero magnam
 							recusandae adipisci ad vitae laudantium quod rem
 							voluptatem eos accusantium cumque.
 						</p>
-						<div class="mt-6">
+						<div className="mt-6">
 							<Link
 								href="https://youtube.com/@awesomecoder.dev"
-								class="px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-600 rounded-lg hover:bg-blue-500 lg:mx-0 lg:w-auto focus:outline-none"
+								className="px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-600 rounded-lg hover:bg-blue-500 lg:mx-0 lg:w-auto focus:outline-none"
 							>
 								Watch Now
 							</Link>
@@ -132,8 +132,8 @@ export default async function Home() {
 					</div>
 				</div>
 
-				<div class="flex items-center justify-center w-full h-96 lg:w-1/2">
-					<div class="relative object-cover w-full h-full max-w-2xl rounded-xl overflow-hidden  bg-gray-300 dark:bg-gray-600">
+				<div className="flex items-center justify-center w-full h-96 lg:w-1/2">
+					<div className="relative object-cover w-full h-full max-w-2xl rounded-xl overflow-hidden  bg-gray-300 dark:bg-gray-600">
 						<Image
 							src="/tv.png"
 							fill={true}
@@ -142,9 +142,9 @@ export default async function Home() {
 							sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw,33vw"
 							className="z-10"
 						/>
-						<div class="flex items-center justify-center w-full h-full animate-pulse">
+						<div className="flex items-center justify-center w-full h-full animate-pulse">
 							<svg
-								class="w-12 h-12 text-gray-200"
+								className="w-12 h-12 text-gray-200"
 								xmlns="http://www.w3.org/2000/svg"
 								aria-hidden="true"
 								fill="currentColor"
@@ -157,200 +157,200 @@ export default async function Home() {
 				</div>
 			</section>
 
-			<footer class="bg-white dark:bg-gray-900">
-				<div class="container px-6 pt-12 mx-auto">
-					<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+			<footer className="bg-white dark:bg-gray-900">
+				<div className="container px-6 pt-12 mx-auto">
+					<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 						<div>
-							<div class="text-xs font-medium text-gray-400 uppercase">
+							<div className="text-xs font-medium text-gray-400 uppercase">
 								Getting Started
 							</div>
 
 							<a
 								href="#"
-								class="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Installation
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Release Notes
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Upgrade Guide
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Using with Preprocessors
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Optimizing for Production
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Browser Support
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								IntelliSense
 							</a>
 						</div>
 
 						<div>
-							<div class="text-xs font-medium text-gray-400 uppercase">
+							<div className="text-xs font-medium text-gray-400 uppercase">
 								Getting Started
 							</div>
 
 							<a
 								href="#"
-								class="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Installation
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Release Notes
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Upgrade Guide
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Using with Preprocessors
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Optimizing for Production
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Browser Support
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								IntelliSense
 							</a>
 						</div>
 
 						<div>
-							<div class="text-xs font-medium text-gray-400 uppercase">
+							<div className="text-xs font-medium text-gray-400 uppercase">
 								Getting Started
 							</div>
 
 							<a
 								href="#"
-								class="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Installation
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Release Notes
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Upgrade Guide
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Using with Preprocessors
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Optimizing for Production
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Browser Support
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								IntelliSense
 							</a>
 						</div>
 
 						<div>
-							<div class="text-xs font-medium text-gray-400 uppercase">
+							<div className="text-xs font-medium text-gray-400 uppercase">
 								Getting Started
 							</div>
 
 							<a
 								href="#"
-								class="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-5 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Installation
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Release Notes
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Upgrade Guide
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Using with Preprocessors
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Optimizing for Production
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								Browser Support
 							</a>
 							<a
 								href="#"
-								class="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
+								className="block mt-3 text-sm font-medium text-gray-500 duration-700 dark:text-gray-300 hover:text-gray-400 dark:hover:text-gray-200 hover:underline"
 							>
 								IntelliSense
 							</a>
