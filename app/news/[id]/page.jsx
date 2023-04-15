@@ -1,7 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const revalidate = false;
+
+export async function generateStaticParams() {
+	const posts = await fetch(
+		"https://banglatv.tv/wp-json/wp/v2/posts/?per_page=100"
+	).then((res) => res.json());
+
+	return posts.map((post) => ({
+		id: `${post.id}`,
+	}));
+}
 
 async function getPost(id) {
 	const res = await fetch(
@@ -24,15 +35,19 @@ export async function generateMetadata({ params, searchParams }) {
 	// console.log("searchParams", searchParams);
 	if (params?.id) {
 		const { post } = await getPost(params.id);
-		return { title: post.title?.rendered ?? "Unknown" };
+		return { title: post.title?.rendered ?? "Not Found" };
 	} else {
-		return { title: "Unknown" };
+		return { title: "Not Found" };
 	}
 	// return { title: "Hello world" };
 }
 
 export default async function Page({ params }) {
 	const { post, cats } = await getPost(params.id);
+
+	if (!post.id) {
+		notFound();
+	}
 
 	return (
 		<>
